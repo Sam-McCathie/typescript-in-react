@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {FC} from "react";
+//FC = functional component
+import "./App.css";
+import {EnumOptions, HairColour} from "./components/Types/Enums";
+import {OtherPerson} from "./components/OtherPerson";
+import {Person} from "./components/Person";
+import {UsingState} from "./components/State/UsingState";
 
-function App() {
+const App: FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Person name="Sam" age={25} email="sam@gmail.com" />
+      <OtherPerson name="Acacia" age={23} email="acacia@gmail.com" />
+      <UsingState />
+      <EnumOptions hairColour={HairColour.Blonde} />
     </div>
   );
-}
+};
 
 export default App;
